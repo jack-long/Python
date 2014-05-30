@@ -61,8 +61,10 @@ while True:
     option = option.lower()
     if option == 'r':
         read()
+        break
     elif option == 's':
         send()
+        break
     elif option == 'q':
         break
 
