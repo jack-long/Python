@@ -39,9 +39,9 @@ class MyTCPHandler(SocketServer.BaseRequestHandler):
             data = data.split(' ')
             command = data[0].upper()
             new_message = data[1] if len(data) > 1 else ""
-            # if command empty
             
             feedback = "!" + command + ": "
+
             if command == "QUIT":
                 feedback += "ok"
                 connection = False
@@ -70,13 +70,13 @@ QUIT           -  Terminates the connection"""
                 feedback += "Invalid command. "
             feedback += "\n> " 
             print "{} wrote:".format(self.client_address[0]), command, new_message
-            # just send back the same data, but upper-cased
+            # send response
             self.request.sendall(feedback)
 
 if __name__ == "__main__":
+    # set host and port
     HOST, PORT = "localhost", 1337
-
-    # Create the server, binding to localhost on port 9999
+    # Create the server, binding to localhost on port
     server = SocketServer.TCPServer((HOST, PORT), MyTCPHandler)
 
     # Activate the server; this will keep running until you
