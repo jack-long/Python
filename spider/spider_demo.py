@@ -96,7 +96,7 @@ def run_in_parallel(p_list, concurrency=20):
                 running_list.remove(p)
 
 
-def main():
+def multi_processing():
     if not os.path.isdir("results"):
         os.mkdir("results")
 
@@ -111,26 +111,5 @@ def main():
     run_in_parallel(p_list=p_list, concurrency=30)
 
 
-    # with codecs.open('brfs.txt', 'wb', encoding='utf-8') as fp:
-    #     # page = 1
-    #     # while page <= 400:
-    #     #     patience = 5
-    #     #     print page
-    #     #     html = download_page(URL.format(page))
-    #     #     brfs = parse_html(html)
-    #     #     if len(brfs) != 25:
-    #     #         patience -= 1
-    #     #         if not patience:
-    #     #             page += 1
-    #     #         print URL.format(page)
-    #     #         error_list.append(page)
-    #     #         continue
-    #     print RESULTS
-    #     for num in xrange(start_page, end_page):
-    #         fp.write(u'{brfs}\n'.format(brfs='\n'.join(RESULTS[num])))
-
-
-    # print ",".join(error_list)
-
 if __name__ == '__main__':
-    main()
+    multi_processing()
