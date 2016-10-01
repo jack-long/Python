@@ -1,2 +1,6 @@
-python setup.py build
+## run
+
+```bash
+python setup.py build   
 python setup.py install
+```
