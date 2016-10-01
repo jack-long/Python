@@ -1,0 +1,1 @@
+int greeting(int, int);
