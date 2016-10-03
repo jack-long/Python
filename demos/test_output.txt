@@ -1,3 +1,0 @@
-This is test result from user_thread_class.py
-
-test it
